@@ -203,37 +203,5 @@ const statsObserver = new IntersectionObserver((entries) => {
 const heroStats = document.querySelector('.hero-stats');
 if (heroStats) statsObserver.observe(heroStats);
 
-/* ---- Credentials banner under topbar ---- */
-function addCredentialsBanner() {
-  const trust = document.querySelector('.trust-bar');
-  if (!trust) return;
-
-  const banner = document.createElement('div');
-  banner.style.cssText = `
-    background: linear-gradient(90deg, #c9a84c, #e6c86e, #c9a84c);
-    background-size: 200% auto;
-    animation: shimmer 3s linear infinite;
-    color: #0a1628;
-    text-align: center;
-    padding: 8px 24px;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-  `;
-  banner.innerHTML = `
-    ⚖️ &nbsp; Abul Kalam Azad, CPA · IRS Authorized e-File Provider &nbsp;·&nbsp; Serving the Bronx & NYC Since Day One &nbsp; ⚖️
-  `;
-
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes shimmer {
-      0%   { background-position: 200% center; }
-      100% { background-position: -200% center; }
-    }
-  `;
-  document.head.appendChild(style);
-  trust.before(banner);
-}
-addCredentialsBanner();
 
 console.log('✅ A. K. Azad CPA website loaded successfully.');
