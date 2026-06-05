@@ -1,0 +1,11 @@
+{
+  "name": "ak-azad-cpa-website",
+  "version": "1.0.0",
+  "description": "A. K. Azad CPA PLLC - Tax & Accounting Website",
+  "scripts": {
+    "start": "npx serve . -p $PORT"
+  },
+  "dependencies": {
+    "serve": "^14.2.3"
+  }
+}
