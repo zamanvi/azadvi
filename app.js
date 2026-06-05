@@ -1,10 +1,9 @@
 /* ============================================
    A. K. AZAD, CPA, PLLC — APP JAVASCRIPT
-   Pure static, no backend required
    ============================================ */
 
 /* ---- Navbar scroll effect ---- */
-const navbar = document.getElementById('navbar');
+const navbar   = document.getElementById('navbar');
 const backToTop = document.getElementById('backToTop');
 
 window.addEventListener('scroll', () => {
@@ -28,7 +27,9 @@ const navLinks  = document.getElementById('navLinks');
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('open');
   navLinks.classList.toggle('open');
-  document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+  const isOpen = navLinks.classList.contains('open');
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+  hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 });
 
 navLinks.querySelectorAll('a').forEach(link => {
@@ -40,8 +41,8 @@ navLinks.querySelectorAll('a').forEach(link => {
 });
 
 /* ---- Active nav link on scroll ---- */
-const sections  = document.querySelectorAll('section[id]');
-const navItems  = document.querySelectorAll('.nav-links a');
+const sections = document.querySelectorAll('section[id]');
+const navItems = document.querySelectorAll('.nav-links a');
 
 window.addEventListener('scroll', () => {
   let current = '';
@@ -50,11 +51,9 @@ window.addEventListener('scroll', () => {
     if (window.scrollY >= top) current = sec.getAttribute('id');
   });
   navItems.forEach(a => {
-    a.style.color = '';
-    a.style.fontWeight = '';
+    a.classList.remove('active');
     if (a.getAttribute('href') === '#' + current) {
-      a.style.color = '#0a1628';
-      a.style.fontWeight = '700';
+      a.classList.add('active');
     }
   });
 });
@@ -68,7 +67,7 @@ revealEls.forEach(el => el.classList.add('reveal'));
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
-    entries.forEach((entry, i) => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
         const delay = entry.target.dataset.delay || 0;
         setTimeout(() => {
@@ -87,10 +86,10 @@ revealEls.forEach(el => revealObserver.observe(el));
 function createParticles() {
   const container = document.getElementById('particles');
   if (!container) return;
-
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const count = 22;
   for (let i = 0; i < count; i++) {
-    const p = document.createElement('div');
+    const p    = document.createElement('div');
     p.classList.add('particle');
     const size = Math.random() * 5 + 2;
     p.style.cssText = `
@@ -106,92 +105,46 @@ function createParticles() {
 }
 createParticles();
 
-/* ---- Contact form handler (static, no backend) ---- */
-function handleSubmit(e) {
+/* ---- Contact form — sends to Formspree ----
+   Sign up free at https://formspree.io, create a form,
+   replace YOUR_FORM_ID below with your actual form ID.
+   ---- */
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
   e.preventDefault();
-  const form    = document.getElementById('contactForm');
+  const form    = e.target;
   const success = document.getElementById('formSuccess');
   const btn     = form.querySelector('button[type="submit"]');
 
-  // Basic validation
   const name  = document.getElementById('fname').value.trim();
   const email = document.getElementById('femail').value.trim();
   if (!name || !email) return;
 
-  // Simulate submission (no backend)
   btn.textContent = 'Sending...';
   btn.disabled    = true;
 
-  setTimeout(() => {
-    form.reset();
+  try {
+    const res = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form),
+    });
+
+    if (res.ok) {
+      form.reset();
+      success.classList.add('show');
+      // Stays visible until user interacts again
+    } else {
+      alert('Something went wrong. Please call us at (917) 561-0271.');
+    }
+  } catch {
+    alert('Network error. Please call us at (917) 561-0271.');
+  } finally {
     btn.textContent = 'Send Message 📨';
     btn.disabled    = false;
-    success.classList.add('show');
-    setTimeout(() => success.classList.remove('show'), 5000);
-  }, 1200);
-}
-
-/* ---- Industries section (dynamic injection) ---- */
-const industries = [
-  { icon: '🏗️', label: 'Construction' },
-  { icon: '🛍️', label: 'Retail' },
-  { icon: '👗', label: 'Fashion' },
-  { icon: '🚛', label: 'Transportation' },
-  { icon: '⚡', label: 'Energy' },
-  { icon: '🏥', label: 'Healthcare' },
-  { icon: '🍽️', label: 'Restaurants' },
-  { icon: '💻', label: 'Technology' },
-  { icon: '🏠', label: 'Real Estate' },
-  { icon: '📚', label: 'Education' },
-  { icon: '👤', label: 'Individuals' },
-  { icon: '🏢', label: 'Small Business' },
-];
-
-function buildIndustriesSection() {
-  // Insert before reviews section
-  const reviewsSec = document.getElementById('reviews');
-  if (!reviewsSec) return;
-
-  const sec = document.createElement('section');
-  sec.className = 'industries';
-  sec.innerHTML = `
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Industries We Serve</span>
-        <h2 class="section-title">Expertise Across Every Industry</h2>
-        <p class="section-sub">From construction to retail, we bring specialized tax knowledge to clients across all major industries in the Bronx and NYC.</p>
-      </div>
-      <div class="industries-grid">
-        ${industries.map(ind => `
-          <div class="industry-pill">
-            <span class="pill-icon">${ind.icon}</span>
-            ${ind.label}
-          </div>
-        `).join('')}
-      </div>
-    </div>
-  `;
-  reviewsSec.before(sec);
-}
-buildIndustriesSection();
-
-/* ---- Credentials / About section enrichment ---- */
-function enrichAboutSection() {
-  const badges = document.querySelector('.about-badges');
-  if (!badges) return;
-
-  // Add CISA credential
-  const cisaBadge = document.createElement('span');
-  cisaBadge.className = 'badge';
-  cisaBadge.textContent = '✓ CISA Certified';
-  badges.appendChild(cisaBadge);
-
-  const irsBadge = document.createElement('span');
-  irsBadge.className = 'badge';
-  irsBadge.textContent = '✓ IRS Authorized e-File';
-  badges.appendChild(irsBadge);
-}
-enrichAboutSection();
+  }
+});
 
 /* ---- Smooth anchor scrolling ---- */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -207,8 +160,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
 /* ---- Stats counter animation ---- */
 function animateCounter(el, target, suffix = '') {
-  let current = 0;
-  const increment = target / 60;
+  let current      = 0;
+  const increment  = target / 60;
   const timer = setInterval(() => {
     current += increment;
     if (current >= target) {
@@ -224,11 +177,22 @@ function animateCounter(el, target, suffix = '') {
 const statsObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      const statNums = entry.target.querySelectorAll('.stat-num');
-      statNums.forEach(el => {
-        const text = el.textContent.trim();
-        if (text.includes('4.9')) {
-          el.innerHTML = '4.9<span class="stat-star">★</span>';
+      const statEls = entry.target.querySelectorAll('.stat');
+      statEls.forEach(stat => {
+        const numEl = stat.querySelector('.stat-num');
+        if (!numEl) return;
+        const text = numEl.textContent.trim();
+        if (text.startsWith('4.9')) {
+          animateCounter(numEl, 4.9, '');
+          setTimeout(() => {
+            numEl.innerHTML = numEl.textContent + '<span class="stat-star">★</span>';
+          }, 1250);
+        } else if (text.startsWith('36')) {
+          animateCounter(numEl, 36, '+');
+        } else if (text.startsWith('7')) {
+          animateCounter(numEl, 7, '');
+        } else if (text.startsWith('10')) {
+          animateCounter(numEl, 10, '+');
         }
       });
       statsObserver.unobserve(entry.target);
@@ -257,13 +221,13 @@ function addCredentialsBanner() {
     letter-spacing: 0.5px;
   `;
   banner.innerHTML = `
-    ⚖️ &nbsp; Abul Kalam Azad, CPA · CISA · IRS Authorized e-File Provider &nbsp;·&nbsp; Serving the Bronx & NYC Since Day One &nbsp; ⚖️
+    ⚖️ &nbsp; Abul Kalam Azad, CPA · IRS Authorized e-File Provider &nbsp;·&nbsp; Serving the Bronx & NYC Since Day One &nbsp; ⚖️
   `;
 
   const style = document.createElement('style');
   style.textContent = `
     @keyframes shimmer {
-      0% { background-position: 200% center; }
+      0%   { background-position: 200% center; }
       100% { background-position: -200% center; }
     }
   `;

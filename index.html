@@ -9,15 +9,34 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.akazazcpa.com/" />
 
+  <!-- Local SEO -->
+  <meta name="geo.region" content="US-NY" />
+  <meta name="geo.placename" content="Bronx, New York" />
+  <meta name="geo.position" content="40.831375;-73.861198" />
+  <meta name="ICBM" content="40.831375, -73.861198" />
+  <meta name="author" content="A. K. Azad, CPA, PLLC" />
+  <meta name="contact" content="info@akazazcpa.com" />
+  <meta name="revisit-after" content="7 days" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>" />
+
   <!-- Open Graph -->
   <meta property="og:title" content="A. K. Azad, CPA, PLLC | Bronx, NY Tax & Accounting" />
   <meta property="og:description" content="Affordable, expert tax & accounting services in the Bronx. 4.9 ⭐ rated. Open 7 days a week." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.akazazcpa.com/" />
+  <meta property="og:image" content="https://www.akazazcpa.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://www.akazazcpa.com/og-image.jpg" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+
+  <!-- Sitemap reference -->
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
   <!-- Schema Markup -->
   <script type="application/ld+json">
@@ -25,8 +44,12 @@
     "@context": "https://schema.org",
     "@type": "AccountingService",
     "name": "A. K. Azad, CPA, PLLC",
-    "description": "Certified public accountant offering knowledgeable tax expertise and comprehensive business support services in the Bronx, NY.",
+    "alternateName": "AK Azad CPA",
+    "description": "Certified public accountant offering knowledgeable tax expertise and comprehensive business support services in the Bronx, NY. Specializing in business tax, individual tax returns, bookkeeping, payroll, and IRS audit support.",
+    "url": "https://www.akazazcpa.com/",
     "telephone": "+19175610271",
+    "email": "info@akazazcpa.com",
+    "priceRange": "$",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "1229 Virginia Ave",
@@ -40,13 +63,80 @@
       "latitude": 40.831375,
       "longitude": -73.861198
     },
+    "hasMap": "https://www.google.com/maps/search/A.K.+Azad+CPA+PLLC+Bronx+NY",
     "openingHours": ["Mo-Su 09:00-20:00"],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "09:00",
+      "closes": "20:00"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Bronx", "sameAs": "https://en.wikipedia.org/wiki/The_Bronx" },
+      { "@type": "City", "name": "New York City", "sameAs": "https://en.wikipedia.org/wiki/New_York_City" }
+    ],
+    "serviceType": [
+      "Business Tax Filing",
+      "Individual Tax Returns",
+      "Bookkeeping",
+      "Payroll Services",
+      "Tax Planning & Consulting",
+      "IRS Audit Support"
+    ],
+    "currenciesAccepted": "USD",
+    "paymentAccepted": "Cash, Check, Credit Card",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
       "reviewCount": "36"
     },
-    "priceRange": "$"
+    "sameAs": [
+      "https://www.yelp.com/biz/a-k-azad-bronx"
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema for common search queries -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where is A. K. Azad CPA located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A. K. Azad, CPA, PLLC is located at 1229 Virginia Ave, Bronx, NY 10472. We serve the Bronx and all of New York City."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are your hours?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We are open 7 days a week, Monday through Sunday, 9:00 AM to 8:00 PM."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer free consultations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Call (917) 561-0271 or fill out our contact form to schedule a free consultation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What tax services do you offer in the Bronx?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer business tax filing, individual tax returns, bookkeeping, payroll services, financial consulting, and IRS audit support — all in the Bronx, NY."
+        }
+      }
+    ]
   }
   </script>
 
@@ -83,12 +173,14 @@
         <a href="#home">Home</a>
         <a href="#services">Services</a>
         <a href="#about">About</a>
-        <a href="#why-us">Why Us</a>
+        <a href="#why-us">Why Choose Us</a>
         <a href="#reviews">Reviews</a>
         <a href="#contact">Contact</a>
+        <a href="tel:+19175610271" class="nav-mobile-call">📞 Call Now: (917) 561-0271</a>
       </nav>
+      <a href="tel:+19175610271" class="nav-phone">📞 (917) 561-0271</a>
       <a href="#contact" class="btn-primary nav-cta">Get Free Consultation</a>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -99,9 +191,6 @@
     <div class="hero-bg-overlay"></div>
     <div class="hero-particles" id="particles"></div>
     <div class="container hero-content">
-      <div class="hero-badge animate-fade-up">
-        <span class="star">★★★★★</span> 4.9 Rated · 36+ Google Reviews
-      </div>
       <h1 class="hero-title animate-fade-up delay-1">
         Your Trusted <span class="gold">CPA Near You</span><br/>in the Bronx, NY
       </h1>
@@ -110,8 +199,8 @@
         Affordable. Accurate. Available 7 days a week.
       </p>
       <div class="hero-actions animate-fade-up delay-3">
-        <a href="#contact" class="btn-primary btn-lg">Schedule Free Consultation</a>
-        <a href="tel:+19175610271" class="btn-outline btn-lg">📞 Call Now</a>
+        <a href="tel:+19175610271" class="btn-primary btn-lg">📞 Call Now</a>
+        <a href="#contact" class="btn-outline btn-lg">Schedule Free Consultation</a>
       </div>
       <div class="hero-stats animate-fade-up delay-4">
         <div class="stat">
@@ -143,21 +232,21 @@
   <!-- ============ TRUST LOGOS / BADGES ============ -->
   <section class="trust-bar">
     <div class="container trust-inner">
-      <div class="trust-item">
-        <span class="trust-icon">🏅</span>
-        <span>Atly Score: <strong>8.9/10</strong></span>
-      </div>
-      <div class="trust-item">
+      <a href="https://www.google.com/maps/search/A.K.+Azad+CPA+PLLC+Bronx+NY" target="_blank" rel="noopener noreferrer" class="trust-item trust-item--link">
         <span class="trust-icon">⭐</span>
         <span>Google Rated <strong>4.9/5</strong></span>
+      </a>
+      <div class="trust-item">
+        <span class="trust-icon">✅</span>
+        <span><strong>Licensed</strong> CPA · NY State</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">📋</span>
+        <span><strong>IRS</strong> Authorized e-File Provider</span>
       </div>
       <div class="trust-item">
         <span class="trust-icon">💰</span>
-        <span><strong>Affordable</strong> Pricing</span>
-      </div>
-      <div class="trust-item">
-        <span class="trust-icon">✅</span>
-        <span><strong>Certified</strong> Public Accountant</span>
+        <span><strong>Affordable</strong> Transparent Pricing</span>
       </div>
       <div class="trust-item">
         <span class="trust-icon">🗽</span>
@@ -177,51 +266,51 @@
       <div class="services-grid">
         <div class="service-card" data-delay="0">
           <div class="service-icon-wrap" style="background: linear-gradient(135deg, #1a3a6e, #2a5aae);">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="6" width="32" height="36" rx="3" fill="rgba(255,255,255,0.15)" stroke="#c9a84c" stroke-width="2"/><path d="M16 18h16M16 24h16M16 30h10" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="35" cy="35" r="7" fill="#c9a84c"/><path d="M33 35h4M35 33v4" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <svg role="img" aria-label="Business Tax icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="6" width="32" height="36" rx="3" fill="rgba(255,255,255,0.15)" stroke="#c9a84c" stroke-width="2"/><path d="M16 18h16M16 24h16M16 30h10" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="35" cy="35" r="7" fill="#c9a84c"/><path d="M33 35h4M35 33v4" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
           <h3>Business Tax</h3>
           <p>Corporate tax filing, payroll tax, HR compliance, and S-Corp/LLC tax strategies tailored for Bronx businesses.</p>
-          <a href="#contact" class="service-link">Learn More →</a>
+          <a href="#contact" class="service-link">Get Free Quote →</a>
         </div>
         <div class="service-card" data-delay="100">
           <div class="service-icon-wrap" style="background: linear-gradient(135deg, #1a5e3a, #2a9a5e);">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="16" r="8" fill="rgba(255,255,255,0.15)" stroke="#c9a84c" stroke-width="2"/><path d="M10 38c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M21 35l2 2 4-4" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg role="img" aria-label="Individual Taxation icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="16" r="8" fill="rgba(255,255,255,0.15)" stroke="#c9a84c" stroke-width="2"/><path d="M10 38c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M21 35l2 2 4-4" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <h3>Individual Taxation</h3>
           <p>Fast, accurate personal tax returns with maximum deductions. We give you the individual attention you deserve.</p>
-          <a href="#contact" class="service-link">Learn More →</a>
+          <a href="#contact" class="service-link">Get Free Quote →</a>
         </div>
         <div class="service-card" data-delay="200">
           <div class="service-icon-wrap" style="background: linear-gradient(135deg, #5e1a1a, #ae2a2a);">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 36l8-8 6 6 10-12 8 8" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="6" y="8" width="36" height="28" rx="3" stroke="#fff" stroke-width="2" fill="rgba(255,255,255,0.08)"/></svg>
+            <svg role="img" aria-label="Bookkeeping icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 36l8-8 6 6 10-12 8 8" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="6" y="8" width="36" height="28" rx="3" stroke="#fff" stroke-width="2" fill="rgba(255,255,255,0.08)"/></svg>
           </div>
           <h3>Bookkeeping</h3>
           <p>Monthly bookkeeping, bank reconciliation, accounts payable/receivable, and financial reporting for your peace of mind.</p>
-          <a href="#contact" class="service-link">Learn More →</a>
+          <a href="#contact" class="service-link">Get Free Quote →</a>
         </div>
         <div class="service-card" data-delay="300">
           <div class="service-icon-wrap" style="background: linear-gradient(135deg, #5e4a1a, #ae842a);">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="14" stroke="#c9a84c" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M24 16v8l5 3" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 10l-3-3M33 10l3-3" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <svg role="img" aria-label="Payroll Services icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="14" stroke="#c9a84c" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M24 16v8l5 3" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 10l-3-3M33 10l3-3" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
           <h3>Payroll Services</h3>
           <p>Streamlined payroll processing, tax withholding, W-2/1099 filing, and compliance — on time, every time.</p>
-          <a href="#contact" class="service-link">Learn More →</a>
+          <a href="#contact" class="service-link">Get Free Quote →</a>
         </div>
         <div class="service-card" data-delay="400">
           <div class="service-icon-wrap" style="background: linear-gradient(135deg, #1a3a5e, #2a6aae);">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 28l8-8 6 4 6-8 8 6" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="6" y="10" width="16" height="16" rx="2" fill="rgba(255,255,255,0.1)" stroke="#fff" stroke-width="1.5"/><rect x="26" y="22" width="16" height="16" rx="2" fill="rgba(255,255,255,0.1)" stroke="#fff" stroke-width="1.5"/></svg>
+            <svg role="img" aria-label="Tax Planning & Consulting icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 28l8-8 6 4 6-8 8 6" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="6" y="10" width="16" height="16" rx="2" fill="rgba(255,255,255,0.1)" stroke="#fff" stroke-width="1.5"/><rect x="26" y="22" width="16" height="16" rx="2" fill="rgba(255,255,255,0.1)" stroke="#fff" stroke-width="1.5"/></svg>
           </div>
-          <h3>Financial Consulting</h3>
+          <h3>Tax Planning & Consulting</h3>
           <p>Strategic financial planning, budgeting, forecasting, and business consulting to help you grow profitably.</p>
-          <a href="#contact" class="service-link">Learn More →</a>
+          <a href="#contact" class="service-link">Get Free Quote →</a>
         </div>
         <div class="service-card" data-delay="500">
           <div class="service-icon-wrap" style="background: linear-gradient(135deg, #2a1a5e, #5a2aae);">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 12h24v6H12zM12 22h14v4H12zM12 30h10v4H12z" fill="rgba(255,255,255,0.12)" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/><path d="M30 28l4 4 6-6" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg role="img" aria-label="IRS Audit Support icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 12h24v6H12zM12 22h14v4H12zM12 30h10v4H12z" fill="rgba(255,255,255,0.12)" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/><path d="M30 28l4 4 6-6" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <h3>IRS Audit Support</h3>
           <p>Expert representation and audit support if you receive IRS notices. We handle communication and resolution on your behalf.</p>
-          <a href="#contact" class="service-link">Learn More →</a>
+          <a href="#contact" class="service-link">Get Free Quote →</a>
         </div>
       </div>
     </div>
@@ -236,9 +325,10 @@
           <h3>A. K. Azad, CPA, PLLC</h3>
           <p>Certified Public Accountant</p>
           <div class="about-badges">
-            <span class="badge">✓ Licensed CPA</span>
-            <span class="badge">✓ IRS Enrolled</span>
-            <span class="badge">✓ PLLC Certified</span>
+            <span class="badge">✓ Licensed CPA · NY State</span>
+            <span class="badge">✓ IRS Authorized e-File Provider</span>
+            <span class="badge">✓ PLLC · Bronx, NY</span>
+            <span class="badge">✓ License #<!-- TODO: add NY CPA license number --></span>
           </div>
         </div>
         <div class="about-floating-card fc1">
@@ -360,6 +450,31 @@
     </div>
   </section>
 
+  <!-- ============ INDUSTRIES ============ -->
+  <section class="industries">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Industries We Serve</span>
+        <h2 class="section-title">Expertise Across Every Industry</h2>
+        <p class="section-sub">From construction to retail, we bring specialized tax knowledge to clients across all major industries in the Bronx and NYC.</p>
+      </div>
+      <div class="industries-grid">
+        <div class="industry-pill"><span class="pill-icon">🏗️</span> Construction</div>
+        <div class="industry-pill"><span class="pill-icon">🛍️</span> Retail</div>
+        <div class="industry-pill"><span class="pill-icon">👗</span> Fashion</div>
+        <div class="industry-pill"><span class="pill-icon">🚛</span> Transportation</div>
+        <div class="industry-pill"><span class="pill-icon">⚡</span> Energy</div>
+        <div class="industry-pill"><span class="pill-icon">🏥</span> Healthcare</div>
+        <div class="industry-pill"><span class="pill-icon">🍽️</span> Restaurants</div>
+        <div class="industry-pill"><span class="pill-icon">💻</span> Technology</div>
+        <div class="industry-pill"><span class="pill-icon">🏠</span> Real Estate</div>
+        <div class="industry-pill"><span class="pill-icon">📚</span> Education</div>
+        <div class="industry-pill"><span class="pill-icon">👤</span> Individuals</div>
+        <div class="industry-pill"><span class="pill-icon">🏢</span> Small Business</div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ REVIEWS ============ -->
   <section class="reviews section" id="reviews">
     <div class="container">
@@ -441,7 +556,7 @@
         </div>
       </div>
       <div class="reviews-cta">
-        <a href="https://www.yelp.com/biz/a-k-azad-bronx" target="_blank" rel="noopener noreferrer" class="btn-outline">Read More Reviews on Yelp</a>
+        <a href="https://www.google.com/maps/search/A.K.+Azad+CPA+PLLC+Bronx+NY" target="_blank" rel="noopener noreferrer" class="btn-outline">Read More Reviews on Google</a>
       </div>
     </div>
   </section>
@@ -452,7 +567,11 @@
       <div class="contact-info">
         <span class="section-tag-light">Get In Touch</span>
         <h2 class="section-title light">Ready to Get Started?</h2>
-        <p class="contact-desc">Fill out the form and we'll get back to you shortly. We're available evenings and weekends for your convenience.</p>
+        <div class="contact-call-first">
+          <a href="tel:+19175610271" class="contact-call-btn">📞 Call Us Now: (917) 561-0271</a>
+          <span class="contact-call-sub">Prefer to talk? Call directly — we answer 7 days a week.</span>
+        </div>
+        <p class="contact-desc" style="margin-top:20px;">Or fill out the form below and we'll get back to you within a few hours — 9 AM – 8 PM, every day.</p>
         <div class="contact-details">
           <div class="contact-item">
             <span class="ci-icon">📍</span>
@@ -498,7 +617,7 @@
         </div>
       </div>
       <div class="contact-form-wrap">
-        <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+        <form class="contact-form" id="contactForm">
           <h3>Send Us a Message</h3>
           <div class="form-group">
             <label for="fname">Full Name *</label>
@@ -522,7 +641,7 @@
               <option>Business Tax Filing</option>
               <option>Bookkeeping</option>
               <option>Payroll Services</option>
-              <option>Financial Consulting</option>
+              <option>Tax Planning & Consulting</option>
               <option>IRS Audit Support</option>
               <option>Other</option>
             </select>
@@ -575,7 +694,7 @@
           <li><a href="#services">Individual Tax Returns</a></li>
           <li><a href="#services">Bookkeeping</a></li>
           <li><a href="#services">Payroll Services</a></li>
-          <li><a href="#services">Financial Consulting</a></li>
+          <li><a href="#services">Tax Planning & Consulting</a></li>
           <li><a href="#services">IRS Audit Support</a></li>
         </ul>
       </div>
@@ -591,8 +710,8 @@
     </div>
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <p>© 2025 A. K. Azad, CPA, PLLC. All Rights Reserved.</p>
-        <p>Serving the Bronx &amp; NYC · CPA Near Me · Tax Accountant Bronx NY</p>
+        <p>© 2026 A. K. Azad, CPA, PLLC. All Rights Reserved.</p>
+        <p><a href="https://www.google.com/maps/search/A.K.+Azad+CPA+PLLC+Bronx+NY" target="_blank" rel="noopener noreferrer" style="color:inherit;">📍 Find Us on Google Maps</a></p>
       </div>
     </div>
   </footer>
@@ -600,6 +719,13 @@
   <!-- Back to top -->
   <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
+  <!-- ============ MOBILE STICKY CTA BAR ============ -->
+  <div class="mobile-cta-bar">
+    <a href="tel:+19175610271" class="mcta-call">📞 Call Now</a>
+    <a href="#contact" class="mcta-form">✉ Free Consultation</a>
+  </div>
+
   <script src="app.js"></script>
+
 </body>
 </html>
