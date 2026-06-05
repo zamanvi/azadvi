@@ -28,7 +28,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'Source Sans 3', -apple-system, sans-serif;
   color: var(--text);
   background: var(--white);
   overflow-x: hidden;
@@ -78,9 +78,9 @@ ul { list-style: none; }
   margin-bottom: 16px;
 }
 .section-title {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(28px, 4vw, 42px);
-  font-weight: 800;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
   color: var(--navy);
   line-height: 1.2;
   margin-bottom: 16px;
@@ -213,7 +213,7 @@ ul { list-style: none; }
 .logo-icon { font-size: 28px; line-height: 1; }
 .logo-text { display: flex; flex-direction: column; }
 .logo-name {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 18px;
   font-weight: 800;
   color: var(--navy);
@@ -332,9 +332,9 @@ ul { list-style: none; }
 }
 .hero-badge .star { color: var(--gold); letter-spacing: 2px; }
 .hero-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(36px, 6vw, 68px);
-  font-weight: 800;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42px, 6vw, 76px);
+  font-weight: 700;
   color: var(--white);
   line-height: 1.1;
   margin-bottom: 24px;
@@ -379,7 +379,7 @@ ul { list-style: none; }
   font-weight: 800;
   color: var(--gold);
   line-height: 1;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
 }
 .stat-star { font-size: 18px; }
 .stat-label {
@@ -567,7 +567,7 @@ ul { list-style: none; }
   filter: drop-shadow(0 4px 12px rgba(201,168,76,0.4));
 }
 .about-card-main h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 18px;
   font-weight: 800;
   color: var(--white);
@@ -703,7 +703,7 @@ ul { list-style: none; }
   transform: translateY(-4px);
 }
 .why-num {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 48px;
   font-weight: 800;
   color: rgba(201,168,76,0.15);
@@ -748,7 +748,7 @@ ul { list-style: none; }
   justify-content: center;
   margin-bottom: 24px;
   box-shadow: var(--shadow-gold);
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   position: relative;
   z-index: 1;
   flex-shrink: 0;
@@ -819,7 +819,7 @@ ul { list-style: none; }
   margin-top: 20px;
 }
 .rating-big {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 52px;
   font-weight: 800;
   color: var(--navy);
@@ -877,7 +877,7 @@ ul { list-style: none; }
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
 }
 .reviewer strong {
   display: block;
@@ -994,7 +994,7 @@ ul { list-style: none; }
   box-shadow: 0 30px 80px rgba(0,0,0,0.3);
 }
 .contact-form h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 24px;
   font-weight: 800;
   color: var(--navy);
@@ -1017,7 +1017,7 @@ ul { list-style: none; }
   padding: 13px 16px;
   border: 1.5px solid #e8edf5;
   border-radius: var(--radius-sm);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Source Sans 3', sans-serif;
   font-size: 14px;
   color: var(--text);
   background: var(--off-white);
@@ -1075,7 +1075,7 @@ ul { list-style: none; }
 }
 .footer-logo strong {
   display: block;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 17px;
   color: var(--white);
 }
